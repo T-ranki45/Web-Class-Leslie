@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Properties for Colors */
+:root {
+  --primary-green: rgb(28, 233, 28);
+  --text-dark: #333;
+  --text-light: #555;
+  --border-light: #eee;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem; /* Slightly more vertical padding */
+  margin: 1.5rem auto;
+  max-width: 85rem;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0 5px 15px var(--shadow-light); /* Stronger shadow */
+}
+body {
+  background:
+    linear-gradient(
+      rgba(255, 166, 0, 0.776),
+      rgba(0, 0, 0, 0.742)
+    ),
+    url(./images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep background fixed when scrolling */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif; /* Applied new font */
+  color: var(--text-dark); /* Default text color */
+}
+#span-1 {
+  background: linear-gradient(
+    to right,
+    rgba(255, 166, 0, 0.776),
+    rgba(0, 72, 255, 0.744),
+    rgba(0, 0, 0, 0.742)
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* For webkit browsers */
+}
+
+#Nav-main {
+  display: flex;
+  list-style: none; /* Remove bullet points */
+  align-items: center;
+  gap: 2rem;
+  /* Removed arbitrary padding-left, gap handles spacing now */
+}
+
+#Nav-main li {
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+#Nav-main li:hover {
+  border-bottom: 2px solid var(--primary-green); /* More prominent hover */
+  color: var(--primary-green);
+  cursor: pointer;
+  padding-bottom: 0.2rem; /* Add some space for the border */
+}
+
+#signup-button:hover {
+  background-color: var(--primary-green);
+  color: white;
+  transform: scale(1.03); /* Slightly less aggressive scale for button */
+  box-shadow: 0 4px 10px rgba(28, 233, 28, 0.4);
+}
+
+#signup-button {
+  border: 1px solid var(--primary-green);
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 500ms ease all;
+  background-color: transparent;
+  color: var(--primary-green);
+}
+
+/* Product Grid Styling */
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--shadow-medium); /* More intense shadow on hover */
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center; /* Center details text */
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 1rem 0;
+  flex-grow: 1;
+  overflow: hidden; /* Hide overflow content */
+  display: -webkit-box; /* Enable webkit-box model */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Set orientation to vertical */
+};
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.add-to-cart {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: none;
+  background-color: var(--primary-green);
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #16a316;
+}
